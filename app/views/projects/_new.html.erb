@@ -1,0 +1,12 @@
+<%= form_with model: [ company, Project.new ] do |form| %>
+    <h2>New project (a.k.a. work experience)</h2>
+    <%= form.label :reference %>:
+    <%= form.text_field :reference %><br/>
+    <%= form.label :title %>:
+    <%= form.text_field :title %><br/>x
+    <%= form.label :period %>:
+    <%= form.text_field :period %><br/>
+    <%= form.label :url %>:
+    <%= form.url_field :url %><br/>
+    <%= form.submit %>
+<% end %>

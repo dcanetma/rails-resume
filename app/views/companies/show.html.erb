@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @company %>
-
+<h1><%= @company.name %></h1>
 <div>
   <%= link_to "Edit this company", edit_company_path(@company) %> |
-  <%= link_to "Back to companies", companies_path %>
-
   <%= button_to "Destroy this company", @company, method: :delete %>
+</div>
+<p style="color: green"><%= notice %></p>
+<%= render @company %>
+<%= render "companies/projects", company: @company %>
+
+<div>
+  <%= link_to "Back to companies", companies_path %>
 </div>

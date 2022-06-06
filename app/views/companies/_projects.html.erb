@@ -1,0 +1,12 @@
+<h2>Projects</h2>
+<p>A list of projects or products you participated to during your tenure at <b><%= company.name %></b>.</p>
+<div id="projects">
+    <%# Expands to render partial: "companies/project", collection: company.projects %>
+    <%= render company.projects %>
+</div>
+
+<p>
+<strong><%= pluralize company.projects.count, "project" %></strong>
+</p>
+
+<%= render "projects/new", company: company %>

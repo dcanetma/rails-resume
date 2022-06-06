@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_06_151142) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_06_160348) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -62,6 +62,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_151142) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.integer "company_id", null: false
+    t.string "reference"
+    t.string "title"
+    t.boolean "status"
+    t.string "period"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_projects_on_company_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "projects", "companies"
 end
